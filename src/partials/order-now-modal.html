@@ -1,0 +1,33 @@
+<div class="modal-overlay is-hidden" data-modal-id="order-now">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" type="button" data-modal-close aria-label="Close modal">
+      &times;
+    </button>
+
+    <h2 class="modal-title" id="modal-title">Order Now</h2>
+
+    <form class="modal-form" novalidate>
+      <label class="modal-label">
+        Name
+        <input class="modal-input" type="text" name="name" autocomplete="name" />
+      </label>
+
+      <label class="modal-label">
+        Phone number
+        <input class="modal-input" type="tel" name="phone" autocomplete="tel" />
+      </label>
+
+      <label class="modal-label">
+        Email
+        <input class="modal-input" type="email" name="email" autocomplete="email" />
+      </label>
+
+      <label class="modal-label">
+        Comment
+        <textarea class="modal-textarea" name="comment" rows="4"></textarea>
+      </label>
+
+      <button class="modal-submit" type="submit">Send</button>
+    </form>
+  </div>
+</div>

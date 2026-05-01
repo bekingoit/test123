@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/spoon-knife.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Favorites</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <load src="./partials/header.html" highlight-act="active" />
+
+    <main>
+      <!-- favorites -->
+      <section class="fav-hero-section">
+        <div class="container fav-hero-container">
+          <picture class="fav-hero-pic">
+            <source
+              media="(min-width: 1280px)"
+              srcset="
+                ./img/webp/favorites-desktop_1x.webp 1x,
+                ./img/webp/favorites-desktop_2x.webp 2x
+              "
+            />
+
+            <source
+              media="(min-width: 768px)"
+              srcset="
+                ./img/webp/favorites-tablet_1x.webp 1x,
+                ./img/webp/favorites-tablet_2x.webp 2x
+              "
+            />
+
+            <source
+              media="(max-width: 767px)"
+              srcset="
+                ./img/webp/favorites-mob_1x.webp 1x,
+                ./img/webp/favorites-mob_2x.webp 2x
+              "
+            />
+
+            <img
+              loading="lazy"
+              src="./img/webp/favorites-desktop_1x.webp"
+              alt="Dish"
+            />
+          </picture>
+        </div>
+      </section>
+      <!-- favv
+      -->
+      <section class="fav-content-section">
+        <div class="container fav-content-container">
+          <ul class="fav-category-recipe-list recipes-list">
+            <button type="button" class="all-category-btn fav-category-btn">
+              All categories
+            </button>
+          </ul>
+
+          <ul class="fav-recipes-list"></ul>
+
+          <div class="fav-no-recipes-content">
+            <svg class="no-recipes-icon">
+              <use href="./img/favorites.svg#icon-favorites"></use>
+            </svg>
+
+            <p class="no-recipes-descr">
+              It appears that you haven't added any recipes to your favorites
+              yet. To get started, you can add recipes that you like to your
+              favorites for easier access in the future.
+            </p>
+          </div>
+        </div>
+      </section>
+      <load src="./partials/recipe-modal.html" />
+      <load src="./partials/rating-modal.html" />
+    </main>
+
+    <load src="./partials/footer.html" />
+    <load src="./partials/order-now-modal.html" />
+    <script src="./js/header.js" defer></script>
+    <script type="module" src="./js/favorites.js" defer></script>
+    <script type="module" src="./js/recipe-modal.js" defer></script>
+    <script type="module" src="./js/footer-modal.js" defer></script>
+  </body>
+</html>

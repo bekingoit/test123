@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 h1,
 h2,
 h3,
@@ -6,10 +12,6 @@ h5,
 h6,
 p {
   margin: 0;
-}
-
-p:last-child {
-  margin-bottom: 0;
 }
 
 ul {
@@ -23,8 +25,13 @@ a {
   text-decoration: none;
 }
 
-button {
+button,
+input,
+select,
+textarea {
+  font: inherit; 
   cursor: pointer;
+  border: none;
 }
 
 img {
@@ -32,3 +39,9 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth; /* Sayfa içi linklerde yumuşak kayma sağlar */
+}
+

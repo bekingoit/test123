@@ -1,0 +1,133 @@
+/* ===== ORDER NOW MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.modal-overlay.is-hidden {
+  display: none;
+}
+
+.modal {
+  position: relative;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 40px 32px 32px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  color: #1a1a1a;
+  padding: 4px 8px;
+  transition: opacity 0.2s;
+}
+
+.modal-close:hover {
+  opacity: 0.6;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 24px;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #6e6e6e;
+}
+
+.modal-input,
+.modal-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1a1a1a;
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.modal-input:focus,
+.modal-textarea:focus {
+  border-color: #b5d43b;
+}
+
+.modal-textarea {
+  resize: none;
+}
+
+.modal-submit {
+  width: 100%;
+  padding: 14px;
+  background-color: #b5d43b;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity 0.2s;
+}
+
+.modal-submit:hover {
+  opacity: 0.85;
+}
+
+/* ===== DARK MODE ===== */
+body.dark-theme .modal {
+  background-color: #050505;
+  color: #fff;
+}
+
+body.dark-theme .modal-close {
+  color: #fff;
+}
+
+body.dark-theme .modal-title {
+  color: #fff;
+}
+
+body.dark-theme .modal-label {
+  color: #a0a0a0;
+}
+
+body.dark-theme .modal-input,
+body.dark-theme .modal-textarea {
+  background-color: transparent;
+  border-color: #3a3a3a;
+  color: #fff;
+}

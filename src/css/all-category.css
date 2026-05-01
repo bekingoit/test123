@@ -1,0 +1,336 @@
+/* 1. ANA PANEL AYARI: Sol tarafın sınırlarını belirliyorum */
+.main-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* saat 18:29 da eklendi */
+.categories-wrapper {
+  /* Figma'daki varsayılan yükseklik */
+  height: 416px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2. KATEGORİ ALANI: Scrollbar ve buton düzeni */
+.category-sidebar {
+  width: 100%;
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+#category-list .cat-items {
+  margin-bottom: 24px;
+}
+
+/* "All Categories" Butonu */
+#all-category-btn {
+  width: 176px;
+  min-width: 176px !important;
+  max-width: 176px !important;
+  height: 50px !important;
+  
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  border: 1px solid rgba(5, 5, 5, 0.1);
+  border-radius: 15px;
+  margin-top: 80px;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(5, 5, 5, 0.5);
+  margin-bottom: 64px;
+  cursor: pointer;
+  transition: all 250ms ease;
+}
+
+/* Hover ve Active (Seçili) Durumu */
+#all-category-btn.active {
+  background-color: #9bbd4c !important;
+  border-color: #9bbd4c !important;
+  color: #f8f8f8 !important;
+}
+
+/* Başına ana kapsayıcı sınıfını ekleyerek (zincirleme) diğer dosyayı eziyoruz */
+#category-list .category-btn.active,
+#category-list .category-btn:hover {
+  background-color: transparent !important; /* Eğer arka plan rengi geliyorsa bunu sıfırladık */
+  color: rgba(155, 181, 55, 1) !important;
+  font-weight: 500 !important;
+}
+
+/* Kategori Listesi ve Scrollbar */
+.category-list {
+  display: flex !important;
+  flex-direction: column !important;
+
+  /* KRİTİK DEĞİŞİKLİK: Sabit px yerine %100 yapıyoruz */
+  height: 100% !important;
+  width: 100%;
+
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Scrollbar'ı modern ve ince hale getiren dokunuş */
+.category-list::-webkit-scrollbar {
+  width: 7px; /* Figma'daki genişlik */
+}
+.category-list::-webkit-scrollbar-thumb {
+  background-color: rgba(5, 5, 5, 0.1);
+  border-radius: 12px;
+}
+
+/* Tekil Kategori Butonları */
+.category-btn {
+  background: none;
+  border: none;
+  color: rgba(5, 5, 5, 0.5);
+  font-size: 16px;
+  padding: 8px 0;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition:
+    color 250ms ease,
+    font-weight,
+    250ms ease;
+}
+
+/* Ana Layout Düzeni */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  /* Başlangıçta mobil genişliği */
+  width: 100%;
+}
+
+/* Sadece 375px'ten büyük VE 768px'ten küçük ekranlar için */
+@media (min-width: 375px) and (max-width: 768px) {
+  #category-list .cat-items {
+    margin-bottom: 16px !important;
+    width: 31px !important;
+    height: 18px !important;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    font-weight: 500;
+  }
+
+  #all-category-btn {
+    width: 176px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(5, 5, 5, 0.1);
+    color: rgba(5, 5, 5, 0.5);
+    border-radius: 15px !important;
+    font-size: 18px !important;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 250ms ease;
+  }
+
+  /* Kategori Listesi: Mobil yüksekliği 198px */
+  .categories-wrapper {
+    height: 198px !important;
+    width: 326px !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .category-btn {
+    font-size: 14px !important;
+    line-height: 18px !important;
+    font-weight: 500 !important;
+    margin-bottom: 16px !important;
+    padding: 0 !important;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    width: 31px !important;
+    height: 18px !important;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) color 250ms
+      cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-wrapper {
+    display: flex !important;
+    gap: 32px !important; /* Figma'daki tablet gap değeri */
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 32px !important; /* Tablet yan boşlukları */
+    align-items: flex-start;
+  }
+
+  .left-panel {
+    width: 176px !important; /* Notlarındaki kritik genişlik */
+    flex-shrink: 0;
+  }
+
+  #all-category-btn {
+    width: 176px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(5, 5, 5, 0.1);
+    color: rgba(5, 5, 5, 0.5);
+    border-radius: 15px !important;
+    font-size: 18px !important;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 250ms ease;
+    margin-top: 106px;
+    margin-bottom: 30px;
+  }
+
+  /* Kategori Listesi: Tablet yüksekliği 352px */
+  .categories-wrapper {
+    height: 416px;
+    width: 176px;
+    gap: 58px;
+  }
+
+  .category-list {
+    display: flex !important;
+    height: 416px !important;
+    gap: 24px !important;
+    padding-right: 20px !important;
+    overflow-y: scroll !important;
+    scrollbar-width: 8px !important;
+  }
+
+  .category-btn {
+    font-size: 16px !important;
+    line-height: 20px !important;
+    /* margin-bottom: 24px !important; */
+    padding: 0 !important;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Scrollbar tablet görünümü */
+  .category-list::-webkit-scrollbar {
+    width: 8px !important;
+    height: 201px !important;
+    color: rgba(5, 5, 5, 0.18);
+  }
+
+  #category-list .cat-items {
+    margin-bottom: 0px !important;
+  }
+}
+
+/* all-category.css içindeki 1280px media query alanını güncelle */
+@media screen and (min-width: 1280px) {
+  .main-wrapper {
+    display: flex !important;
+    gap: 64px !important; /* Figma Desktop gap değeri */
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 100px !important; /* Sayfayı ortalayan yan boşluklar */
+    align-items: flex-start;
+  }
+
+  .left-panel {
+    width: 280px !important; /* Sol panel genişliğini sabitledik */
+    flex-shrink: 0;
+  }
+
+  .cat-items {
+    width: 36px;
+    height: 100%;
+  }
+
+  .all-category-button {
+    width: 174px !important;
+    height: 50px !important;
+    font-size: 18px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: auto;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-left: 0;
+    margin-bottom: 42px !important;
+  }
+
+  /* Kategori Listesi: Desktop yüksekliği 352px */
+  .category-list {
+    width: 100%;
+    height: 416px !important;
+    padding-right: 18px !important;
+    overflow-y: auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .category-list::-webkit-scrollbar {
+    width: 8px !important;
+    height: 201px !important;
+  }
+
+  .category-sidebar.container {
+    width: 100%;
+    margin-bottom: 42px; /* Figma'daki desktop alt boşluk değeri */
+    padding: 0;
+    margin-top: 106px !important; /* Figma'daki üst boşluk */
+    padding-left: 0 !important; /* Sol boşluk sıfırlandı */
+    padding-right: 0 !important; /* Sağ boşluk sıfırlandı */
+  }
+
+  .categories-wrapper {
+    width: 235px !important;
+    height: 416px !important;
+  }
+
+  .category-btn {
+    font-size: 16px;
+    line-height: 20px;
+    display: block;
+    gap: 24px; /* Figma Desktop gap değeri, fakat display block olduğu için width ve height arasında otomatik olarak sığacak yine de yazdım */
+    padding: 0;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    width: 36px;
+    height: 20px;
+    padding: 0 !important;
+  }
+
+  #category-list .cat-items {
+    margin-bottom: 0px !important;
+  }
+}
+
+body.dark-theme #all-category-btn {
+  color: rgba(255, 255, 255, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+body.dark-theme .filter-input,
+body.dark-theme .custom-select-trigger {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-theme #category-list::-webkit-scrollbar {
+  width: 2px;
+}
+
+body.dark-theme #category-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body.dark-theme #category-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}

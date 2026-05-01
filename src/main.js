@@ -1,0 +1,13 @@
+// src/main.js
+import './js/storage.js';
+import './js/rating.js';
+import './js/header.js';
+import './js/hero.js';
+import './js/all-category.js';
+import './js/popular-recipes.js';
+import './js/recipe-cards.js';
+import './js/filters.js';
+import './js/footer-modal.js';
+import './js/search.js';
+import './js/recipe-modal.js';
+import './js/rating-modal.js';

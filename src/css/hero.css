@@ -1,0 +1,319 @@
+/* ===== HERO ===== */
+.hero {
+  padding: 32px 0 40px;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-right: 0 !important;
+}
+
+/* --- Content --- */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 48px;
+}
+
+.hero-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+  width: 335px;
+  color: rgba(5, 5, 5, 1);
+  margin: 0;
+}
+
+.hero-accent {
+  font-style: oblique;
+  color: rgba(155, 181, 55, 1);
+  font-weight: 400;
+}
+
+.hero-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(5, 5, 5, 1);
+  margin: 14px 0 28px;
+}
+
+.hero-btn {
+  width: 127px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(155, 181, 55, 1);
+  border-radius: 15px;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(5, 5, 5, 1);
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.hero-btn:hover,
+.hero-btn:focus-visible {
+  background-color: rgba(155, 181, 55, 1);
+  border-color: rgba(155, 181, 55, 1);
+  color: rgba(248, 248, 248, 1);
+  outline: none;
+}
+
+/* --- Slider --- */
+.hero-swiper {
+  padding-bottom: 26px;
+}
+
+.swiper-slide.hero-slide {
+  width: auto;
+  flex-shrink: 0;
+}
+
+.hero-slide-inner {
+  display: flex;
+}
+
+/* --- Cards --- */
+.hero-card--chef {
+  display: block;
+  height: 280px;
+  width: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 15px;
+  flex-shrink: 0;
+}
+
+.hero-card--food-sm {
+  display: flex;
+  margin: 0 10px;
+  height: 280px;
+  width: 200px;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.hero-card-preview {
+  display: block;
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 15px;
+  flex-shrink: 0;
+}
+
+.hero-card-caption-title {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(248, 248, 248, 0.6);
+  width: 172px;
+}
+
+.hero-card-caption-sub {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 8px;
+  line-height: 12px;
+  color: rgba(248, 248, 248, 0.2);
+  text-align: center;
+}
+
+.hero-card--food-lg {
+  display: block;
+  height: 280px;
+  width: 185px;
+  background-size: 564px;
+  border-radius: 15px;
+  background-position: 30%;
+  background-repeat: no-repeat;
+  background-color: #1a1a1a;
+  flex-shrink: 0;
+}
+
+/* --- Pagination --- */
+.hero-pagination.swiper-pagination {
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  height: 18px;
+}
+
+.hero-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(5, 5, 5, 1);
+  opacity: 1;
+  margin: 0 !important;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+body.dark-theme .hero-pagination .swiper-pagination-bullet {
+  background-color: white;
+}
+
+.hero-pagination .swiper-pagination-bullet-active,
+body.dark-theme .hero-pagination .swiper-pagination-bullet-active  {
+  background-color: rgba(155, 181, 55, 1);
+}
+
+.hero-card--food-sm {
+  margin: 0 !important;
+}
+
+.hero-slide-inner {
+  display: flex;
+  gap: 16px; /* margin yerine */
+}
+
+.hero-swiper {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+.hero-swiper {
+  min-width: 0;
+}
+
+.swiper-wrapper {
+  display: flex; /* Swiper default */
+  height: 305px !important;
+}
+
+.hero-swiper {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.hero-container {
+  min-width: 0;
+}
+
+.swiper-wrapper {
+  width: 100% !important;
+}
+
+
+/* ===== TABLET ===== */
+@media screen and (min-width: 768px) {
+
+
+  .hero-container {
+    padding-right: 32px !important;
+  }
+
+  .hero-content {
+    width: 446px;
+    margin-bottom: 64px;
+    margin-right: 32px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+    width: 446px;
+  }
+
+  .hero-accent {
+    font-size: 36px;
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 16px 0 32px;
+    width: 408px;
+  }
+
+  .swiper-slide.hero-slide {
+    width: auto;
+    max-width: none;
+  }
+
+  .hero-swiper {
+    height: 468px;
+    padding-bottom: 26px;
+  }
+
+  .hero-slide-inner {
+    height: 442px;
+  }
+
+  .hero-card--chef {
+    height: 442px;
+    width: 137px;
+  }
+
+  .hero-card--food-sm {
+    margin: 0 16px;
+    height: 442px;
+    width: 351px;
+  }
+
+  .hero-card-preview {
+    width: 262px;
+    height: 262px;
+    border-radius: 12px;
+  }
+
+  .hero-card-caption-title {
+    font-size: 14px;
+    line-height: 18px;
+    width: 276px;
+  }
+
+  .hero-card-caption-sub {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .hero-card--food-lg {
+    height: 442px;
+    width: 351px;
+    background-size: 863px;
+  }
+}
+
+/* ===== DESKTOP ===== */
+@media screen and (min-width: 1280px) {
+
+  .hero-container {
+    flex-direction: row;
+    align-items: center;
+    overflow: visible;
+  }
+
+  .hero-content {
+    flex: 0 0 446px;
+    margin-bottom: 0;
+  }
+
+  .hero-card-preview {
+    width: 304px;
+    height: 271px;
+  }
+}
+

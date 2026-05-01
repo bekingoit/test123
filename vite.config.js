@@ -6,14 +6,18 @@ import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig(({ command }) => {
   return {
+    base: '/test123/',
     define: {
-      [command === 'serve' ? 'global' : '_global']: {},
+      global: {},
     },
     root: 'src',
     build: {
       sourcemap: true,
       rollupOptions: {
-        input: glob.sync('./src/*.html'),
+        input: {
+          main: './index.html',
+          favorites: './favorites.html',
+        },
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
@@ -34,7 +38,7 @@ export default defineConfig(({ command }) => {
           },
         },
       },
-      outDir: '../dist',
+      outDir: './dist',
       emptyOutDir: true,
     },
     plugins: [

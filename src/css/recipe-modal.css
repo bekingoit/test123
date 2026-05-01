@@ -1,0 +1,399 @@
+/* --- MOBİL VARSAYILAN (335px) --- */
+
+/* Modal içindeki her şeyin genişliğini sınırla */
+.recipe-modal-window iframe,
+.recipe-modal-window img,
+.recipe-modal-window div {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+body.dark-theme .ingredient-measure {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+body.dark-theme .ingredient-name {
+  color: #fff;
+}
+
+body.dark-theme .recipe-instructions {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.dark-theme #recipeModal .recipe-tag-item {
+  color: #fff !important;
+  border-color: #fff !important;
+
+}
+
+body.dark-theme #recipeModal .recipe-tag-item {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.recipe-modal-backdrop {
+  /* Sayfaya sabitlemek için 'fixed' kullanıyoruz */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  /* Her şeyin en üstünde görünmesi için yüksek bir değer */
+  z-index: 999;
+
+  /* Arka planı hafif karartmak için */
+  background-color: rgba(0, 0, 0, 0.4);
+
+  /* İçindeki modal penceresini tam ortaya hizalamak için */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  padding: 20px 0;
+  /* Modal kapalıyken gizli olması için */
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 250ms ease,
+    visibility 250ms ease;
+}
+
+/* Bu sınıf modalın kapalı kalmasını sağlar */
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.recipe-modal-window {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 95%;
+  max-width: 335px;
+  min-height: auto; /* Verdiğin ölçüye göre */
+  background-color: var(--bg-color);
+  border-radius: 15px;
+  padding: 20px; /* Üstten 40, yanlardan 20px (Verdiğin top/left değerlerine göre) */
+  position: relative;
+  margin: auto;
+  opacity: 1;
+  box-sizing: border-box;
+  padding-top: 40px;
+
+  max-height: 90vh; /* Modal ekranın %90'ından fazla uzamasın */
+  overflow-y: auto; /* İçerik taşarsa dikeyde kaydırma çubuğu çıkar */
+  scrollbar-width: thin; /* Firefox için ince çubuk */
+}
+
+.modal-close-btn {
+  /* 1. Yerini belirle */
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  /* 2. Boyut ve Stil */
+  width: 30px;
+  height: 30px;
+  font-size: 24px; /* X işaretinin büyüklüğü */
+  color: var(--black); /* X işaretinin rengi (Siyah) */
+
+  /* 3. Arka planı temizle */
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  /* 4. Ortala */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  /* 5. En üstte olduğundan emin ol */
+  z-index: 999;
+}
+
+/* Video Alanı */
+.video-wrapper {
+  width: 100%;
+  height: 295px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--bg-color);
+}
+
+/* Başlık */
+.recipe-title {
+  width: 100%;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.29em;
+  letter-spacing: 0em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-top: 20px;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+/* Rating ve Zaman Çubuğu */
+
+.recipe-stats {
+  display: flex; /* Elemanları yan yana dizer */
+  align-items: center; /* Hepsini dikeyde tam ortalar */
+  justify-content: flex-start; /* Hepsini en soldan başlatır */
+  gap: 8px; /* Aralarına 10'ar piksel boşluk koyar */
+  margin-bottom: 33px; /* Malzeme listesiyle arandaki o meşhur boşluk */
+  width: 100%;
+}
+
+.recipe-stars {
+  display: flex; 
+  gap: 7px; 
+  padding: 0;
+  list-style: none;
+}
+
+
+.recipe-rating {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29em;
+  color: #05050580;
+}
+
+.recipe-time {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29em;
+  letter-spacing: 0em;
+  color: #05050580;
+  margin-left: -16px;
+}
+
+#recipeModal .ingredients-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredient-item {
+  display: flex;
+  justify-content: space-between; /* İsim sola, ölçü sağa yaslanır */
+  align-items: center;
+  gap: 12px; /* Satırlar arası boşluk */
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(5, 5, 5, 0.2); /* Altlarındaki o ince gri çizgi */
+  padding-top: 14px;
+  min-width: 100%;
+}
+
+.ingredient-name {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2em;
+  color: var(--black);
+}
+
+.ingredient-measure {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2em;
+  color: rgb(78, 78, 78); /* Miktar kısmı görseldeki gibi daha gri/hafif */
+}
+
+.recipe-tags {
+  display: flex;
+  flex-wrap: wrap; /* Mobilde sığmazsa alt satıra geçmesi için */
+  gap: 8px; /* Etiketlerin arasındaki boşluk */
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+  margin-bottom: 24px;
+}
+
+#recipeModal .recipe-tag-item {
+  min-width: 95px;
+  height: 33px;
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 35px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.2em;
+  color: #050505 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.recipe-instructions {
+  width: 100%;
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  color: #050505CC;
+  line-height: 1.29em;
+  letter-spacing: 0em;
+}
+
+.modal-btn-group {
+  display: flex;
+  justify-content: center; 
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.btn {
+  width: 148px;
+  height: 41px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  padding: 12px;
+  border-radius: 15px;
+  font-size: 14px; 
+  font-weight: 500;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: -0.02em;
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--black);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-primary);
+  color: var(--bg-color); 
+}
+/*TABLET*/
+@media screen and (min-width: 768px) {
+  .recipe-modal-window {
+    min-width: 531px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    position: relative;
+  }
+
+  .modal-close-btn {
+     top: 10px;
+     right: 16px;
+     width: 30px;
+     height: 30px;
+  }
+  .recipe-modal-content {
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .video-wrapper {
+    width: 467px;
+    height: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    order: 2;
+  }
+
+  .recipe-info-container {
+    order: 1;
+  }
+
+  .recipe-title {
+    font-weight: 600;
+    font-size: 18px;
+    text-wrap: nowrap;
+    line-height: 1.2em;
+    letter-spacing: 0em;
+    margin-bottom: 16px;
+  }
+
+  .recipe-stats {
+    top: -50px;
+    right: -290px;
+    order: 4;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 177px;
+    white-space: nowrap;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 5;
+  }
+
+  .recipe-rating {
+    font-size: 14px;
+  }
+
+.js-recipe-stars svg, 
+  .js-recipe-stars img {
+    display: block;
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+.recipe-stars {
+    gap: 7px;
+    margin-right: 0;
+}
+
+  .recipe-time {
+    font-size: 14px;
+    text-wrap: nowrap;
+  }
+
+  .ingredients-container {
+    width: 467px;
+    order: 5;
+    clear: both;
+    margin-top: -32px;
+  }
+
+  .recipe-tags {
+    order: 3;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding-right: 16px;
+    margin-top: 16px;
+    width: 65%;
+  }
+
+  .recipe-tag-item {
+    padding-left: 16px;
+    padding-right: 16px;
+    min-width: 0;
+    display: inline-flex;
+  }
+
+  .instructions-container {
+    width: 467px;
+    order: 6;
+    margin-top: 32px;
+  }
+
+  .modal-btn-group {
+    order: 7;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: start;
+  }
+
+  .btn btn-favorite {
+    width: 156px;
+    height: 45px;
+    font-size: 14px;
+    text-align: center;
+  }
+}

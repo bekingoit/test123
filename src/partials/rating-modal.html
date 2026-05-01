@@ -1,0 +1,54 @@
+
+<!-- Modal Ana Çerçeve -->
+<div id="ratingModal" class="modal-overlay is-hidden">
+  <div class="modal-content rating-modal-content">
+    
+    <!-- Kapatma Butonu -->
+    <button type="button" class="modal-close-btn js-modal-close-btn">&times;</button>
+    
+    <p class="rating-label">Rating</p>
+    
+    <!-- Yıldız Konteynırı -->
+    <div class="star-rating-container">
+      <span class="rating-value js-rating-value">0.0</span>
+      
+      <ul class="rating-stars-list">
+        <!-- SVG Kütüphanesi: Sayfada gizlidir, bir kez tanımlanması yeterli -->
+        <svg style="display: none;">
+          <symbol id="icon-star1" viewBox="0 0 26 28">
+            <path d="M26 10.109c0 0.281-0.203 0.547-0.406 0.75l-5.672 5.531 1.344 7.812c0.016 0.109 0.016 0.203 0.016 0.313 0 0.406-0.187 0.781-0.641 0.781-0.219 0-0.438-0.078-0.625-0.187l-7.016-3.687-7.016 3.687c-0.203 0.109-0.406 0.187-0.625 0.187-0.453 0-0.656-0.375-0.656-0.781 0-0.109 0.016-0.203 0.031-0.313l1.344-7.812-5.688-5.531c-0.187-0.203-0.391-0.469-0.391-0.75 0-0.469 0.484-0.656 0.875-0.719l7.844-1.141 3.516-7.109c0.141-0.297 0.406-0.641 0.766-0.641s0.625 0.344 0.766 0.641l3.516 7.109 7.844 1.141c0.375 0.063 0.875 0.25 0.875 0.719z"></path>          </symbol>
+        </svg>
+
+        <!-- Yıldızlar -->
+        <li class="rating-star-item" data-value="1">
+          <svg class="icon icon-star1"><use href="#icon-star1"></use></svg>
+        </li>
+        <li class="rating-star-item" data-value="2">
+          <svg class="icon icon-star1"><use href="#icon-star1"></use></svg>
+        </li>
+        <li class="rating-star-item" data-value="3">
+          <svg class="icon icon-star1"><use href="#icon-star1"></use></svg>
+        </li>
+        <li class="rating-star-item" data-value="4">
+          <svg class="icon icon-star1"><use href="#icon-star1"></use></svg>
+        </li>
+        <li class="rating-star-item" data-value="5">
+          <svg class="icon icon-star1"><use href="#icon-star1"></use></svg>
+        </li>
+      </ul>
+    </div> <!-- .star-rating-container kapanış -->
+
+    <!-- Form Alanı -->
+    <form class="rating-form js-rating-form">
+      <input 
+        type="email" 
+        class="rating-input" 
+        name="email" 
+        placeholder="Enter email" 
+        required
+      >
+      <button type="submit" class="btn btn-send">Send</button>
+    </form>
+    
+  </div> <!-- .modal-content kapanış -->
+</div> <!-- .modal-overlay kapanış -->

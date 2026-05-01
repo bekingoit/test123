@@ -1,0 +1,62 @@
+<div
+  id="recipeModal"
+  class="recipe-modal-backdrop is-hidden js-recipe-modal-backdrop"
+>
+  <div class="recipe-modal-window js-recipe-modal-window">
+    <button type="button" class="modal-close-btn js-modal-close-btn">
+      &times;
+    </button>
+
+    <div class="recipe-modal-content js-recipe-modal-content">
+      <div class="video-wrapper">
+        <div id="youtubePlayer"></div>
+      </div>
+      <div class="recipe-info-container">
+        <h2 class="recipe-title js-recipe-title"></h2>
+      </div>
+      <div class="recipe-stats">
+        <span class="recipe-rating js-recipe-rating"></span>
+        <div class="recipe-stars js-recipe-stars">
+          <img src="./img/favicon.svg" class="star-icon filled" alt="star" />
+          <img src="./img/favicon.svg" class="star-icon filled" alt="star" />
+          <img src="./img/favicon.svg" class="star-icon filled" alt="star" />
+          <img src="./img/favicon.svg" class="star-icon filled" alt="star" />
+          <img src="./img/favicon.svg" class="star-icon" alt="star" />
+        </div>
+        <span class="recipe-time js-recipe-time"></span>
+      </div>
+
+      <div class="ingredients-container">
+        <ul class="ingredients-list js-ingredients">
+          <li class="ingredient-item">
+            <span class="ingredient-name"></span>
+            <span class="ingredient-measure"></span>
+          </li>
+          <li class="ingredient-item">
+            <span class="ingredient-name"></span>
+            <span class="ingredient-measure"></span>
+          </li>
+          <li class="ingredient-item">
+            <span class="ingredient-name"></span>
+            <span class="ingredient-measure"></span>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="recipe-tags js-tags">
+        <li class="recipe-tag-item"></li>
+      </ul>
+
+      <div class="instructions-container">
+        <p class="recipe-instructions js-instructions"></p>
+      </div>
+
+      <div class="modal-btn-group">
+        <button class="btn btn-favorite" type="button">Add to favorite</button>
+        <button id="giveRatingBtn" class="btn btn-rating" type="button">
+          Give a rating
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
